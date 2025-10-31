@@ -50,9 +50,10 @@ for arquivo in os.listdir(path_dir):
             shutil.move(arquivo_origen,pasta_destino)
             print(f"Arquivo: {arquivo} \n Movido com sucesso")
                     
-    
-    if os.path.isdir(arquivo_origen):
-        pasta_destino = os.path.join()
+    # Criar pasta para pastas e move-las 
+
+    #if os.path.isdir(arquivo_origen):
+       # pasta_destino = os.path.join()
 
 
 
