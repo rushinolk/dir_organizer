@@ -26,11 +26,15 @@ def mover_arquivo(arquivo:str,arquivo_origen:str,pasta_destino:str):
 def criar_lista_pastas_existentes(path_dir,mapeamento_extensoes):
     caminho_pasta_criada = []
 
-    for extensao in mapeamento_extensoes:
-        pasta_criada = mapeamento_extensoes[extensao]
-        caminho_pasta = os.path.join(path_dir,pasta_criada)
-        if caminho_pasta not in caminho_pasta_criada:
-            caminho_pasta_criada.append(caminho_pasta)
+    valor_mapeamento = list(mapeamento_extensoes.values())
+    set_pastas = set(valor_mapeamento)
+    set_pastas.add('Outros')
+    set_pastas.add('Pastas')
+
+
+    for nome_pasta in set_pastas:
+        caminho_pasta = os.path.join(path_dir,nome_pasta)
+        caminho_pasta_criada.append(caminho_pasta)
         
     return caminho_pasta_criada
 
